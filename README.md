@@ -1,4 +1,4 @@
-# 🌍 Climate Trend Analyzer Pro – Climate Forecasting & Anomaly Detection Dashboard
+# 🌍 Climate Trend Analyzer – Climate Forecasting & Anomaly Detection Dashboard
 
 <div align="center">
 
