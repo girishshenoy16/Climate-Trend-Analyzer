@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Climate Intelligence Platform</h1>
+    <p>
+        Forecast temperature trends, benchmark ML models,
+        and detect unusual climate anomalies.
+    </p>
+</section>
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+        <span>🏆 Best Model</span>
+        <h2>{{ metrics.Best_Model }}</h2>
+    </div>
+
+    <div class="stat-card">
+        <span>📉 RMSE</span>
+        <h2>{{ "%.2f"|format(metrics.RMSE|float) }}</h2>
+    </div>
+
+    <div class="stat-card">
+        <span>📈 R² Score</span>
+        <h2>{{ "%.2f"|format(metrics.R2|float) }}</h2>
+    </div>
+
+    <div class="stat-card">
+        <span>🎯 MAPE</span>
+        <h2>{{ "%.2f"|format(metrics.MAPE|float) }}%</h2>
+    </div>
+
+</section>
+
+<section class="info-panel">
+
+    <div class="mini-card">
+        <h3>📊 Forecasting</h3>
+        <p>30-day future temperature prediction using trained ML models.</p>
+    </div>
+
+    <div class="mini-card">
+        <h3>⚠️ Anomaly Detection</h3>
+        <p>Heatwaves, coldwaves, pressure spikes, and unusual climate days.</p>
+    </div>
+
+    <div class="mini-card">
+        <h3>🤖 Model Benchmarking</h3>
+        <p>Compare Linear Regression, Random Forest, and XGBoost.</p>
+    </div>
+
+</section>
+
+{% endblock %}

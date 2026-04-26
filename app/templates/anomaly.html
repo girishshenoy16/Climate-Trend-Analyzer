@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Anomaly{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <h1>⚠️ Climate Anomaly Detection</h1>
+    <p>Top unusual climate days ranked by anomaly severity.</p>
+</section>
+
+<section class="charts-section">
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <img src="/outputs/temperature_anomalies.png" alt="Temperature">
+            <p>Temperature Anomalies</p>
+        </div>
+
+        <div class="chart-card">
+            <img src="/outputs/humidity_trend.png" alt="Humidity">
+            <p>Humidity Trend</p>
+        </div>
+
+        <div class="chart-card">
+            <img src="/outputs/pressure_trend.png" alt="Pressure">
+            <p>Pressure Trend</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="table-section">
+
+    <div class="table-card">
+
+        <h2>📋 Top Climate Anomalies</h2>
+
+        <div class="table-scroll tall-scroll">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Temperature</th>
+                        <th>Humidity</th>
+                        <th>Pressure</th>
+                        <th>Severity</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for row in anomalies %}
+                    <tr>
+                        <td>{{ row.date }}</td>
+                        <td>{{ "%.2f"|format(row.meantemp) }}</td>
+                        <td>{{ "%.2f"|format(row.humidity) }}</td>
+                        <td>{{ "%.2f"|format(row.meanpressure) }}</td>
+                        <td><strong>{{ "%.2f"|format(row.severity) }}</strong></td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats-grid small-gap">
+
+    <div class="stat-card">
+        <span>⚠️ Rows Displayed</span>
+        <h2>{{ anomalies|length }}</h2>
+    </div>
+
+    <div class="stat-card">
+        <span>📈 Detection Mode</span>
+        <h2>Severity Rank</h2>
+    </div>
+
+</section>
+
+{% endblock %}

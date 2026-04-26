@@ -1,0 +1,435 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    min-height:100%;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg,#eef2ff,#f8fafc,#edf7ff);
+    color:#111827;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1;
+    padding:40px 0;
+}
+
+.container{
+    width:92%;
+    max-width:1320px;
+    margin:auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    background:linear-gradient(90deg,#0f172a,#1d4ed8,#2563eb);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.nav{
+    min-height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:1.25rem;
+    font-weight:800;
+    letter-spacing:.3px;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.25s ease;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.14);
+    transform:translateY(-1px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+    padding:25px 0 15px;
+}
+
+.hero h1{
+    font-size:3rem;
+    font-weight:800;
+    margin-bottom:12px;
+    color:#0f172a;
+}
+
+.hero p{
+    font-size:1.08rem;
+    color:#475569;
+    max-width:820px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header{
+    margin-bottom:26px;
+}
+
+.page-header h1{
+    font-size:2.1rem;
+    margin-bottom:8px;
+    color:#0f172a;
+}
+
+.page-header p{
+    color:#64748b;
+}
+
+/* =========================
+   GRID / CARDS
+========================= */
+
+.stats-grid,
+.chart-grid,
+.info-panel{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+    margin-top:26px;
+}
+
+.small-gap{
+    margin-top:20px;
+}
+
+.stat-card,
+.mini-card,
+.chart-card,
+.table-card{
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+    transition:.25s ease;
+}
+
+.stat-card:hover,
+.mini-card:hover,
+.chart-card:hover,
+.table-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 34px rgba(15,23,42,.12);
+}
+
+.stat-card span{
+    display:block;
+    font-size:.95rem;
+    color:#64748b;
+    margin-bottom:10px;
+}
+
+.stat-card h2{
+    font-size:2rem;
+    color:#1d4ed8;
+    font-weight:800;
+}
+
+.mini-card h3{
+    margin-bottom:10px;
+    color:#0f172a;
+}
+
+.mini-card p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+/* =========================
+   CHARTS
+========================= */
+
+.chart-card img,
+.large-chart img{
+    width:100%;
+    border-radius:14px;
+    display:block;
+}
+
+.chart-card p{
+    margin-top:12px;
+    text-align:center;
+    color:#475569;
+    font-weight:600;
+}
+
+.large-chart{
+    padding:18px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-section{
+    margin-top:26px;
+}
+
+.table-card h2{
+    margin-bottom:18px;
+    color:#0f172a;
+}
+
+.table-scroll{
+    overflow:auto;
+    border-radius:14px;
+}
+
+.tall-scroll{
+    max-height:560px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:720px;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+thead th{
+    background:#1d4ed8;
+    color:#fff;
+    padding:14px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:2;
+    font-size:.95rem;
+}
+
+tbody td{
+    padding:13px;
+    border-bottom:1px solid #eef2f7;
+    text-align:center;
+    color:#334155;
+}
+
+tbody tr:nth-child(even){
+    background:#f8fbff;
+}
+
+tbody tr:hover{
+    background:#eef4ff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:40px;
+    background:#0f172a;
+    color:#cbd5e1;
+    text-align:center;
+    padding:18px;
+    font-size:.95rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .page-header h1{
+        font-size:1.8rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .nav{
+        flex-direction:column;
+        padding:14px 0;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    main{
+        padding:28px 0;
+    }
+
+    .stat-card h2{
+        font-size:1.6rem;
+    }
+}
+
+@media(max-width:520px){
+
+    .container{
+        width:95%;
+    }
+
+    .logo{
+        font-size:1.05rem;
+    }
+
+    nav a{
+        padding:8px 12px;
+        font-size:.92rem;
+    }
+}
+
+
+/* =====================================
+   FINAL POLISH
+===================================== */
+
+/* Active Navbar */
+.active-nav{
+    background:rgba(255,255,255,.16);
+    border-radius:10px;
+}
+
+/* Better table number alignment */
+td{
+    font-variant-numeric: tabular-nums;
+}
+
+/* Sticky headers improved */
+thead th{
+    top:0;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+
+/* Better anomaly severity column */
+tbody td strong{
+    color:#1d4ed8;
+    font-weight:800;
+}
+
+/* Scrollbars */
+.table-scroll::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb{
+    background:#94a3b8;
+    border-radius:10px;
+}
+
+.table-scroll::-webkit-scrollbar-track{
+    background:#e2e8f0;
+}
+
+/* Scroll to top button */
+#scrollTopBtn{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:50%;
+    background:#1d4ed8;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+    transition:.25s;
+}
+
+#scrollTopBtn:hover{
+    transform:translateY(-3px);
+    background:#2563eb;
+}
+
+/* Fade animation */
+.hidden{
+    opacity:0;
+    transform:translateY(20px);
+    transition:.5s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Better mobile nav */
+@media(max-width:768px){
+
+    nav{
+        gap:6px;
+    }
+
+    nav a{
+        font-size:.88rem;
+        padding:8px 10px;
+    }
+
+    .table-card,
+    .chart-card,
+    .stat-card{
+        padding:18px;
+    }
+
+    .tall-scroll{
+        max-height:420px;
+    }
+}

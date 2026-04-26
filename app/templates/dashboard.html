@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <h1>📊 Model Performance Dashboard</h1>
+    <p>Leaderboard comparison and evaluation visuals.</p>
+</section>
+
+<section class="table-section">
+
+    <div class="table-card">
+
+        <h2>🏆 Model Leaderboard</h2>
+
+        <div class="table-scroll">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Model</th>
+                        <th>MAE</th>
+                        <th>RMSE</th>
+                        <th>MAPE</th>
+                        <th>R²</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for row in leaderboard %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ row.Model }}</td>
+                        <td>{{ "%.2f"|format(row.MAE|float) }}</td>
+                        <td>{{ "%.2f"|format(row.RMSE|float) }}</td>
+                        <td>{{ "%.2f"|format(row.MAPE|float) }}</td>
+                        <td>{{ "%.2f"|format(row.R2|float) }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="charts-section">
+
+    <h2 class="section-title">📈 Evaluation Charts</h2>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <img src="/outputs/actual_vs_predicted_temp.png" alt="Actual vs Predicted">
+            <p>Actual vs Predicted</p>
+        </div>
+
+        <div class="chart-card">
+            <img src="/outputs/residual_plot.png" alt="Residual Plot">
+            <p>Residual Plot</p>
+        </div>
+
+        <div class="chart-card">
+            <img src="/outputs/error_distribution.png" alt="Error Distribution">
+            <p>Error Distribution</p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
