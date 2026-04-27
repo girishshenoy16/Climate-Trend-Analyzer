@@ -216,8 +216,8 @@ data/raw/
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/Climate-Trend-Analyzer-Pro.git
-cd Climate-Trend-Analyzer-Pro
+git clone https://github.com/girishshenoy16/Climate-Trend-Analyzer.git
+cd Climate-Trend-Analyzer
 ```
 
 ---
